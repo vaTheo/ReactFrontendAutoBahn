@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// src/App.tsx
 
-function App() {
+import React from 'react';
+import MainPage from './components/mainPage';  // Assume you have a Dashboard component
+import Login from './components/Login';
+import Register from './components/Register';
+
+
+const App: React.FC = () => {
+  const userToken = localStorage.getItem('userToken');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {userToken ? <MainPage/> : (
+        <>
+          <Login />
+          <Register />
+        </>
+      )}
     </div>
   );
-}
+};
 
 export default App;
