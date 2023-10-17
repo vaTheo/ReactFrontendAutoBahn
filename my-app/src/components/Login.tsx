@@ -2,7 +2,7 @@
 // dotenv.config();
 import "./loginRegister.css";
 import React, { useState } from "react";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { IloginReq } from "../types/typesRequest";
 
 const LINK_BACKEND = "http://localhost:3001";
@@ -25,7 +25,7 @@ const Login: React.FC = () => {
         password: password,
       } as IloginReq);
 
-      if (response.status == 200) {
+      if (response.status === 200) {
         console.log(username);
         localStorage.setItem(
           "userToken",
@@ -34,7 +34,7 @@ const Login: React.FC = () => {
         localStorage.setItem("userID", response.headers.userid);
         localStorage.setItem("userName", username);
         console.log("Login successful:", response.data);
-        window.location.reload(); // Reload the page
+        // window.location.reload(); // Reload the page
       } else if (response.status === 201) {
       } else {
         // any other 2XX status

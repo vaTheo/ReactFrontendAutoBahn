@@ -6,6 +6,14 @@ header {
     background-color: #3ad7fa;
   }
   
+  .title-header{
+    display: flex;
+  }
+
+  .elements-header{
+    display: flexbox;
+  }
+
   nav a {
     margin: 0 1rem;
     color: white;

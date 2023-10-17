@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from '../components/common/Headers';
-
 const HomePage: React.FC = () => {
   return (
     <div>

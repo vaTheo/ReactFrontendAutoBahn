@@ -1,13 +1,15 @@
 // import dotenv from 'dotenv';
 // dotenv.config();
 import "./Logout.css";
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
-import { IlogoutReq } from "../types/typesRequest";
+import { useNavigate } from 'react-router-dom';
+
 
 const LINK_BACKEND = "http://localhost:3001";
+const Logout: React.FC = () => {
+  const navigate = useNavigate();
 
-const mainPage: React.FC = () => {
   const handleLogout = async () => {
     try {
       const token = localStorage.getItem("userToken");
@@ -27,24 +29,24 @@ const mainPage: React.FC = () => {
       );
 
       if (response.status === 200) {
-        console.log(`Logout backend successufull :` + { userName });
+        console.log(`Logout successful for user: ${userName}`);
       }
     } catch (err) {
       console.log("handleLogout" + err);
     } finally {
       //In nay case remove the token from the web application and relaoad page
       localStorage.removeItem("userToken");
-      window.location.reload(); // Reload the page
+      navigate('/');  // Navigate to the login page after logoutn
     }
   };
 
   return (
     <div>
       <h1>You are logged in.</h1>
-      <h2> Would you like to play ?</h2>
+      <h2> Would you like to logout ?</h2>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );
 };
 
-export default mainPage;
+export default Logout;
