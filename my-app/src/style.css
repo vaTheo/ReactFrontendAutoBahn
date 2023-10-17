@@ -1,0 +1,25 @@
+/* Global styles for the body element */
+body {
+  font-family: 'Arial', sans-serif;  /* Sets the global font to Arial */
+  margin: 0;                         /* Removes default margin */
+  padding: 0;                        /* Removes default padding */
+  background-color: #ffffff;         /* Sets a white background color */
+}
+
+/* Styling for all anchor (link) elements */
+a {
+  text-decoration: none;             /* Removes the default underline from links */
+  color: #0b0b0b;                    /* Sets the link color to a dark gray */
+}
+
+/* Hover effect for anchor (link) elements */
+a:hover {
+  text-decoration: underline;        /* Adds an underline to links on hover */
+}
+
+/* Container class for centering and padding content */
+.container {
+  max-width: 1200px;                 /* Sets a maximum width for the container */
+  margin: 0 auto;                    /* Centers the container horizontally */
+  padding: 0 20px;                   /* Adds horizontal padding to the container */
+}

@@ -1,0 +1,13 @@
+.lougout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .lougout-form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(34, 196, 94, 0.1);
+  }

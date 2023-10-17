@@ -1,24 +1,28 @@
-// src/App.tsx
+import React from "react";
+import Logout from "./components/Logout"; // Assume you have a Dashboard component
+import Login from "./components/Login";
+import Register from "./components/Register";
+import HomePage from './pages/HomePage';
 
-import React from 'react';
-import MainPage from './components/mainPage';  // Assume you have a Dashboard component
-import Login from './components/Login';
-import Register from './components/Register';
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/common/Headers";
 
 const App: React.FC = () => {
-  const userToken = localStorage.getItem('userToken');
+  const userToken = localStorage.getItem("userToken");
 
   return (
-    <div>
-      {userToken ? <MainPage/> : (
-        <>
-          <Login />
-          <Register />
-        </>
-      )}
-    </div>
+    <Router>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />{" "}
+        <Route path="/logout" element={<Logout />} />{" "}
+        {/* Other routes go here */}
+      </Routes>
+    </Router>
   );
+
 };
 
 export default App;

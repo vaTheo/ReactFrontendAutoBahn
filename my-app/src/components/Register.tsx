@@ -1,5 +1,7 @@
 // import dotenv from 'dotenv';
 // dotenv.config();
+import "./loginRegister.css";
+
 import React,{useState } from 'react';
 import axios from 'axios';
 import {IregisterReq} from '../types/typesRequest'
@@ -45,11 +47,13 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
-      <input type="text" placeholder="Username" value={username} onChange={handleUsernameChange} />
-      <input type="password" placeholder="Password" value={password} onChange={handlePasswordChange} />
-      <button onClick={registerUser}>Register</button>
+    <div className="loginRegister-container">
+       <form className="loginRegister-form">
+      <h1 className="loginRegister-Header">Register</h1>
+      <input className="loginRegister-input" type="text" placeholder="Username" value={username} onChange={handleUsernameChange} />
+      <input className="loginRegister-input" type="password" placeholder="Password" value={password} onChange={handlePasswordChange} />
+      <button className="loginRegister button" onClick={registerUser}>Register</button>
+      </form>
     </div>
   );
 };

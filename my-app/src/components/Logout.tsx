@@ -1,5 +1,6 @@
 // import dotenv from 'dotenv';
 // dotenv.config();
+import "./Logout.css";
 import React, { useState } from "react";
 import axios from "axios";
 import { IlogoutReq } from "../types/typesRequest";
@@ -13,14 +14,14 @@ const mainPage: React.FC = () => {
       const userName = localStorage.getItem("userID");
       const response = await axios.post(
         LINK_BACKEND + "/user/logout",
-        {//No payload send, only headers
+        {
+          //No payload send, only headers
         },
 
         {
           headers: {
-            'authorization': `Bearer ${token}`,
-            'userid':userName,
-
+            authorization: `Bearer ${token}`,
+            userid: userName,
           },
         }
       );
@@ -30,10 +31,11 @@ const mainPage: React.FC = () => {
       }
     } catch (err) {
       console.log("handleLogout" + err);
+    } finally {
+      //In nay case remove the token from the web application and relaoad page
+      localStorage.removeItem("userToken");
+      window.location.reload(); // Reload the page
     }
-    //In nay case remove the token from the web application and relaoad page
-     localStorage.removeItem("userToken");
-     window.location.reload(); // Reload the page
   };
 
   return (
