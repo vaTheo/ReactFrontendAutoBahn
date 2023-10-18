@@ -3,8 +3,7 @@
 import "./Logout.css";
 import React from "react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 const LINK_BACKEND = "http://localhost:3001";
 const Logout: React.FC = () => {
@@ -14,6 +13,7 @@ const Logout: React.FC = () => {
     try {
       const token = localStorage.getItem("userToken");
       const userName = localStorage.getItem("userID");
+      console.log("Axios logout");
       const response = await axios.post(
         LINK_BACKEND + "/user/logout",
         {
@@ -36,7 +36,9 @@ const Logout: React.FC = () => {
     } finally {
       //In nay case remove the token from the web application and relaoad page
       localStorage.removeItem("userToken");
-      navigate('/');  // Navigate to the login page after logoutn
+      localStorage.removeItem("userID");
+      localStorage.removeItem("userName");
+      navigate("/"); // Navigate to the login page after logoutn
     }
   };
 

@@ -50,7 +50,7 @@ const Login: React.FC = () => {
   };
   return (
     <div className="loginRegister-container">
-      <form className="loginRegister-form">
+      <div className="loginRegister-form">
         <h1 className="loginRegister-Header">Login</h1>
         <input
           className="loginRegister-input"
@@ -69,7 +69,7 @@ const Login: React.FC = () => {
         <button className="loginRegister button" onClick={loginUser}>
           Login
         </button>
-      </form>
+      </div>
     </div>
   );
 };
