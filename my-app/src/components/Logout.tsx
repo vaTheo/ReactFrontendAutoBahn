@@ -12,7 +12,8 @@ const Logout: React.FC = () => {
   const handleLogout = async () => {
     try {
       const token = localStorage.getItem("userToken");
-      const userName = localStorage.getItem("userID");
+      const userID = localStorage.getItem("userID");
+      const userName = localStorage.getItem("userName");
       console.log("Axios logout");
       const response = await axios.post(
         LINK_BACKEND + "/user/logout",
@@ -23,7 +24,7 @@ const Logout: React.FC = () => {
         {
           headers: {
             authorization: `Bearer ${token}`,
-            userid: userName,
+            userid: userID,
           },
         }
       );
@@ -43,11 +44,12 @@ const Logout: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>You are logged in.</h1>
-      <h2> Would you like to logout ?</h2>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
+    <div className="logout-container">
+      <div className="logout-form">
+      <h1 className="logout-text">You are logged in.</h1>
+      <h1 className="logout-text"> Would you like to logout ?</h1>
+      <button className="logout-button" onClick={handleLogout}>Logout</button>
+    </div></div>
   );
 };
 

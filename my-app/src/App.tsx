@@ -3,8 +3,14 @@ import Logout from "./components/Logout"; // Assume you have a Dashboard compone
 import Login from "./components/Login";
 import Register from "./components/Register";
 import HomePage from "./pages/HomePage";
+import CreateGame from "./pages/CreateGame";
 import { userAuth } from "./Hook/userAuth";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Header from "./components/common/Headers";
 
 const App: React.FC = () => {
@@ -21,6 +27,8 @@ const App: React.FC = () => {
           path="/logout"
           element={isAuthenticated ? <Logout /> : <Navigate to="/" />}
         />
+        <Route path="/CreateGame" element={<CreateGame />} />
+
         {/* Other routes go here */}
       </Routes>
     </Router>

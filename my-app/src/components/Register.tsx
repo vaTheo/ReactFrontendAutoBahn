@@ -11,6 +11,8 @@ const LINK_BACKEND = "http://localhost:3001";
 const Register: React.FC = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
   const [registerSuccessfull, setRegisterSuccessfull] =
     useState<boolean>(false);
 
@@ -37,12 +39,15 @@ const Register: React.FC = () => {
         // Any other 2XX status
       }
       console.log("Registration successful:", response.data);
-    } catch (error) {
+    } catch (error: any) {
       if (axios.isAxiosError(error)) {
         console.error("Server responded with an error:", error.response?.data);
+        setErrorMessage(error.response?.data || "An error occurred.");
       } else {
         console.error("Error during login:", error);
+        setErrorMessage("An unexpected error occurred.");
       }
+      setIsModalOpen(true);
     }
   };
 
@@ -64,11 +69,24 @@ const Register: React.FC = () => {
           value={password}
           onChange={handlePasswordChange}
         />
-        <button className="loginRegister button" onClick={registerUser}>
+        <button className="loginRegister-button" onClick={registerUser}>
           Register
         </button>
       </div>
-      {registerSuccessfull && <h3>{username} est inscrit, prêt à dicave</h3>}{" "}
+      {registerSuccessfull && <h3>{username} est inscrit, prêt à dicave</h3>}
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span
+              className="close-button"
+              onClick={() => setIsModalOpen(false)}
+            >
+              &times;
+            </span>
+            <p>{errorMessage}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

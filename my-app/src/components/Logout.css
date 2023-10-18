@@ -1,13 +1,39 @@
-.lougout-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .lougout-form {
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(34, 196, 94, 0.1);
-  }
+/* The main container that wraps the entire logout component */
+.logout-container {
+  display: flex;                 /* Use flexbox for layout */
+  justify-content: center;      /* Horizontally center the child elements */
+  align-items: center;          /* Vertically center the child elements */
+  height: 100vh;                /* Take up the full viewport height */
+  background-color: #f7f8fa;   /* Set a light background color */
+}
+
+/* The form that wraps the logout text and button */
+.logout-form {
+  padding: 20px;                /* Add padding around the form */
+  border: 1px solid #ddd;      /* Add a light border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow */
+  background-color: #fff;      /* Set a white background color for contrast */
+  text-align: center;          /* Center the text inside the form */
+}
+
+/* Style the text inside the logout form */
+.logout-text {
+  font-size: 1.2rem;            /* Increase the font size for better readability */
+  margin-bottom: 10px;          /* Add some space between the text and the button */
+}
+
+/* Style the logout button */
+.logout-button {
+  padding: 10px 20px;           /* Add padding for a larger clickable area */
+  background-color: #007BFF;    /* Use a blue background color */
+  color: #fff;                  /* Set the text color to white for contrast */
+  border: none;                 /* Remove any default borders */
+  border-radius: 5px;           /* Round the corners slightly */
+  cursor: pointer;              /* Change the cursor on hover for better UX */
+  transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+/* Change the button color slightly when hovered */
+.logout-button:hover {
+  background-color: #0056b3;
+}

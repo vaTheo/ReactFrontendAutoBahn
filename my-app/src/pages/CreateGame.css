@@ -1,0 +1,91 @@
+/* NewGame-container: Styling for the main container */
+.NewGame-container {
+    display: flex;                /* Make the container a flexbox container */
+    justify-content: center;      /* Horizontally center the content */
+    align-items: center;          /* Vertically center the content */
+    height: 100vh;                /* Set the height to the full viewport height */
+    background-color: #f5f5f5;   /* Set a light gray background color */
+}
+
+/* NewGame-form: Styling for the form inside the main container */
+.NewGame-form {
+    width: 300px;                 /* Set a fixed width for the form */
+    padding: 20px;                /* Add padding inside the form for spacing */
+    border: 1px solid #ddd;       /* Add a light gray border around the form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    background-color: #ffffff;    /* Set a white background color for the form */
+}
+
+/* NewGame-Header: Styling for the header text of the form */
+.NewGame-Header {
+    font-size: 24px;              /* Set a larger font size for the header */
+    margin-bottom: 20px;          /* Add space below the header */
+    text-align: center;           /* Center the header text */
+}
+
+/* Dropdown styling for selecting the number of cards */
+.NewGame-form select {
+    width: 100%;                  /* Make the dropdown span the full width of its container */
+    padding: 8px;                 /* Add some padding for visual comfort */
+    margin: 10px 0;               /* Add margin above and below for spacing */
+    border: 1px solid #ddd;       /* A light gray border around the dropdown */
+    border-radius: 4px;           /* Rounded corners for the dropdown */
+}
+
+/* NewGame-button: Styling for the "Start game" button */
+.NewGame-button {
+    width: 100%;                  /* Make the button span the full width of its container */
+    padding: 10px;                /* Add some padding for visual comfort and size */
+    background-color: #007BFF;    /* A blue background color */
+    border: none;                 /* Remove any default browser borders */
+    border-radius: 4px;           /* Rounded corners for the button */
+    color: #fff;                  /* White text color for contrast */
+    cursor: pointer;              /* Change cursor to indicate it's clickable */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the button, making it a bit darker */
+.NewGame-button:hover {
+    background-color: #0056b3;
+}
+
+/* modal: Styling for the modal that appears on error */
+.modal {
+    position: fixed;              /* Fix the position so it overlays everything */
+    top: 0;                       /* Start from the top-left corner */
+    left: 0;
+    width: 100%;                  /* Span the full width and height of the viewport */
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* A semi-transparent black background */
+    display: flex;                /* Make it a flexbox container to center its content */
+    justify-content: center;      /* Horizontally center the content */
+    align-items: center;          /* Vertically center the content */
+}
+
+/* modal-content: Styling for the content inside the modal */
+.modal-content {
+    width: 80%;                   /* Make it occupy 80% of the viewport width */
+    max-width: 400px;             /* But don't let it grow beyond 400px */
+    padding: 20px;                /* Add some padding for spacing */
+    background-color: #fff;       /* White background for contrast */
+    border-radius: 4px;           /* Rounded corners for aesthetics */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* A subtle shadow for depth */
+    text-align: center;           /* Center the text inside */
+}
+
+/* close-button: Styling for the button to close the modal */
+.close-button {
+    position: absolute;           /* Absolute position to place it inside modal-content */
+    top: 15px;                    /* Position it 15px from the top */
+    right: 15px;                  /* Position it 15px from the right */
+    background: none;             /* No background color */
+    border: none;                 /* No border */
+    font-size: 24px;              /* Make the 'X' larger */
+    cursor: pointer;              /* Change cursor to indicate it's clickable */
+    transition: color 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the close button, making it blue */
+.close-button:hover {
+    color: #007BFF;
+}

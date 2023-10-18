@@ -2,14 +2,19 @@
 // dotenv.config();
 import "./loginRegister.css";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { IloginReq } from "../types/typesRequest";
 
 const LINK_BACKEND = "http://localhost:3001";
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
@@ -33,8 +38,7 @@ const Login: React.FC = () => {
         );
         localStorage.setItem("userID", response.headers.userid);
         localStorage.setItem("userName", username);
-        console.log("Login successful:", response.data);
-        // window.location.reload(); // Reload the page
+        navigate("/CreateGame");
       } else if (response.status === 201) {
       } else {
         // any other 2XX status
@@ -43,9 +47,12 @@ const Login: React.FC = () => {
     } catch (error: any) {
       if (axios.isAxiosError(error)) {
         console.error("Server responded with an error:", error.response?.data);
+        setErrorMessage(error.response?.data || "An error occurred.");
       } else {
         console.error("Error during login:", error);
+        setErrorMessage("An unexpected error occurred.");
       }
+      setIsModalOpen(true);
     }
   };
   return (
@@ -66,10 +73,23 @@ const Login: React.FC = () => {
           value={password}
           onChange={handlePasswordChange}
         />
-        <button className="loginRegister button" onClick={loginUser}>
+        <button className="loginRegister-button" onClick={loginUser}>
           Login
         </button>
       </div>
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span
+              className="close-button"
+              onClick={() => setIsModalOpen(false)}
+            >
+              &times;
+            </span>
+            <p>{errorMessage}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
