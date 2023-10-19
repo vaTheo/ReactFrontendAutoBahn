@@ -7,7 +7,7 @@ import axios from "axios";
 
 const LINK_BACKEND = "http://localhost:3001";
 
-const Login: React.FC = () => {
+const CreateGame: React.FC = () => {
     const navigate = useNavigate();
 
   // Error modal (popin)
@@ -35,7 +35,10 @@ const Login: React.FC = () => {
         },
       })
       if (response.status === 200){
-  
+        const gameID = response.data.gameID
+        localStorage.setItem("gameID", gameID);
+
+        navigate("/autobahn");
       }
 
     } catch (error: any) {
@@ -87,4 +90,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default CreateGame;

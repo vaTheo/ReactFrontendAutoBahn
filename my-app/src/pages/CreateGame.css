@@ -2,9 +2,10 @@
 .NewGame-container {
     display: flex;                /* Make the container a flexbox container */
     justify-content: center;      /* Horizontally center the content */
-    align-items: center;          /* Vertically center the content */
-    height: 100vh;                /* Set the height to the full viewport height */
-    background-color: #f5f5f5;   /* Set a light gray background color */
+    align-items: first baseline;          /* Vertically center the content */
+    height: 0vh;                /* Set the height to the full viewport height */
+    background-color: #f5f5f5;
+    margin-top:  50px;   /* Set a light gray background color */
 }
 
 /* NewGame-form: Styling for the form inside the main container */
