@@ -1,176 +1,216 @@
-$color: #c0c0c0;
-$background: #f0f0f0;
-$gutter: 10px;
-$font-size: 16px;
+// Define color variables
+$color: #c0c0c0; // Light grey color
+$background: #f0f0f0; // Light grey background color
+$gutter: 10px; // Space between elements
+$font-size: 16px; // Font size
 
-$card-background: #fff;
-$card-padding: 4px;
-$card-width: 172px;
-$card-height: 240px;
-$card-color-red: #e44145;
-$card-color-black: #252525;
-$card-symbol-size: 40px;
+// Define card-specific variables
+$card-background: #fff; // Background color for cards
+$card-padding: 4px; // Padding inside cards
+$card-width: 172px; // Width of cards
+$card-height: 240px; // Height of cards
+$card-color-red: #e44145; // Red color for hearts and diamonds
+$card-color-black: #252525; // Black color for spades and clubs
+$card-symbol-size: 40px; // Size of card symbols
 
+// Define styles for the body element
 body {
-  padding: 0;
-  margin: 0;
-  background: $background;
+  padding: 0; // Remove default padding
+  margin: 0; // Remove default margin
 }
 
+// Define styles for the cards container
 .cards {
-  text-align: center;
-  max-width: 1440px;
-  margin: 0 auto;
+  text-align: center; // Center text inside cards container
+  max-width: 1440px; // Maximum width of cards container
+  margin: 0 auto; // Center cards container horizontally
 }
 
+// Define styles for each card
 .card {
-  position: relative;
-  display: inline-block;
-  width: $card-width;
-  height: $card-height;
-  font: $font-size 'Trebuchet MS';
+  position: relative; // Use relative positioning for card
+  display: inline-block; // Display cards as inline-block elements
+  width: $card-width; // Set width of card
+  height: $card-height; // Set height of card
+  font: $font-size 'Trebuchet MS'; // Set font size and family for card
   
-  margin: $gutter;
-  border-radius: $card-padding;
-  background: $card-background;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  margin: $gutter; // Set margin around each card
+  border-radius: $card-padding; // Set border radius for card
+  background: $card-background; // Set background color for card
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18); // Add shadow to card
   
   &:before,
   &:after {
-    content: attr(value);
-    position: absolute;
-    width: 12px;
-    text-align: center;
-    letter-spacing: -2px;
+    content: attr(value); // Use the value attribute as content for pseudo-elements
+    position: absolute; // Use absolute positioning for pseudo-elements
+    width: 12px; // Set width of pseudo-elements
+    text-align: center; // Center text inside pseudo-elements
+    letter-spacing: -2px; // Adjust letter spacing inside pseudo-elements
   }
   
   &:before {
-    top: $card-padding;
-    left: $card-padding;
+    top: $card-padding; // Set top position for before pseudo-element
+    left: $card-padding; // Set left position for before pseudo-element
   }
   
   &:after {
-    bottom: $card-padding;
-    right: $card-padding;
-    transform: rotate(180deg);
+    bottom: $card-padding; // Set bottom position for after pseudo-element
+    right: $card-padding; // Set right position for after pseudo-element
+    transform: rotate(180deg); // Rotate after pseudo-element 180 degrees
   }
   
   &--heart {
-    color: $card-color-red;
+    color: $card-color-red; // Set text color for heart cards
     
     &:before,
     &:after {
-      content: attr(value) ' ♥';
+      content: attr(value) ' ♥'; // Add heart symbol to content
     }
   }
   
   &--spade {
-    color: $card-color-black;
+    color: $card-color-black; // Set text color for spade cards
     
     &:before,
     &:after {
-      content: attr(value) ' ♠';
+      content: attr(value) ' ♠'; // Add spade symbol to content
     }
   }
-
+  
   &--diamonds {
-    color: $card-color-red;
+    color: $card-color-red; // Set text color for diamond cards
     
     &:before,
     &:after {
-      content: attr(value) ' ♦';
+      content: attr(value) ' ♦'; // Add diamond symbol to content
     }
   }
   
   &--clubs {
-    color: $card-color-black;
+    color: $card-color-black; // Set text color for club cards
     
     &:before,
     &:after {
-      content: attr(value) ' ♣';
+      content: attr(value) ' ♣'; // Add club symbol to content
     }
   }
 }
 
-card-head{
-  max-width: 100%;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+// Define styles for card head valet
+.card-head-valet{
+  background-image: url('./valet.png'); /* Path to your image */
+  background-size: contain; // Ensure the image is contained within the element, maintaining its aspect ratio
+  background-repeat: no-repeat; // Do not repeat the image
+  background-position: center; // Center the image within the element
+  width: 75%; // Set the width of the element
+  height: 75%; // Set the height of the element
+  position: relative; // Use absolute positioning
+  top: 5%; // Position at the top of the parent element
+  left: 13%; // Position at the left of the parent element
+ 
+}
+// Define styles for card head king
+.card-head-roi{
+  background-image: url('./roi.png'); /* Path to your image */
+  background-size: contain; // Ensure the image is contained within the element, maintaining its aspect ratio
+  background-repeat: no-repeat; // Do not repeat the image
+  background-position: center; // Center the image within the element
+  width: 75%; // Set the width of the element
+  height: 75%; // Set the height of the element
+  position: relative; // Use absolute positioning
+  top: 5%; // Position at the top of the parent element
+  left: 13%; // Position at the left of the parent element
+ 
+}
+// Define styles for card head valet
+.card-head-dame{
+  background-image: url('./dame.png'); /* Path to your image */
+  background-size: contain; // Ensure the image is contained within the element, maintaining its aspect ratio
+  background-repeat: no-repeat; // Do not repeat the image
+  background-position: center; // Center the image within the element
+  width: 75%; // Set the width of the element
+  height: 75%; // Set the height of the element
+  position: relative; // Use absolute positioning
+  top: 5%; // Position at the top of the parent element
+  left: 13%; // Position at the left of the parent element
+ 
 }
 
+// Define styles for card inner section
 .card__inner {
-  box-sizing: border-box;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  top: 6 * $card-padding;
-  left: 6 * $card-padding;
-  right: 6 * $card-padding;
-  bottom: 6 * $card-padding;
+  box-sizing: border-box; // Use border-box model for sizing
+  position: absolute; // Use absolute positioning
+  display: flex; // Use flexbox layout
+  justify-content: space-between; // Distribute space between items
+  top: 6 * $card-padding; // Set top position
+  left: 6 * $card-padding; // Set left position
+  right: 6 * $card-padding; // Set right position
+  bottom: 6 * $card-padding; // Set bottom position
   
   &--centered {
-    justify-content: center;
+    justify-content: center; // Center items horizontally
   }
 }
 
+// Define styles for card column
 .card__column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: flex; // Use flexbox layout
+  flex-direction: column; // Arrange items in a column
+  justify-content: space-between; // Distribute space between items
   
   &--centered {
-    justify-content: center;
+    justify-content: center; // Center items vertically
   }
 }
 
+// Define styles for card symbols
 .card__symbol {
-  display: inline-block;
-  height: $card-symbol-size;
-  text-align: center;
+  display: inline-block; // Display as inline-block
+  height: $card-symbol-size; // Set height of symbol
+  text-align: center; // Center text inside symbol
   
   &:before {
-    font-size: $card-symbol-size;
-    line-height: $card-symbol-size;
+    font-size: $card-symbol-size; // Set font size of symbol
+    line-height: $card-symbol-size; // Set line height of symbol
   }
   
   .card--heart &:before {
-    content: '♥';
+    content: '♥'; // Add heart symbol
   }
   
   .card--spade &:before {
-    content: '♠';
+    content: '♠'; // Add spade symbol
   }
 
   .card--diamonds &:before {
-    content: '♦';
+    content: '♦'; // Add diamond symbol
   }
+  
   .card--clubs &:before {
-    content: '♣';
+    content: '♣'; // Add club symbol
   }
   
   &--rotated,
   &:last-of-type {
-    transform: rotate(180deg);
+    transform: rotate(180deg); // Rotate symbol 180 degrees
   }
   
   &:first-of-type {
-    transform: rotate(0);
+    transform: rotate(0); // No rotation for first symbol
   }
   
   &--big {
-    flex-basis: 0.25 * $card-height;
+    flex-basis: 0.25 * $card-height; // Set flex basis for big symbol
   }
   
   &--huge {
-    flex-basis: 0.45 * $card-height;
+    flex-basis: 0.45 * $card-height; // Set flex basis for huge symbol
   }
 }
 
+// Define styles for title
 .title {
-  font: 18px 'Trebuchet MS';
-  color: #444;
-  text-align: center;
+  font: 18px 'Trebuchet MS'; // Set font size and family for title
+  color: #444; // Set text color for title
+  text-align: center; // Center text for title
 }

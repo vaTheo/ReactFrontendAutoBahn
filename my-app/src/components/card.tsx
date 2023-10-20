@@ -19,15 +19,18 @@ const Cards: React.FC = () => {
       }
     }
   };
-  return (
-    <div className="autbahn-container">
-      <h1 className="title">Flexbox layout for ♥ and ♠</h1>
+  const cardColor ='heart'
+  const cardNumber = 1 //From 1 to 14 (14 =Joker)
 
+
+
+  return (
+    <div>
       {/* <!-- Hearts --> */}
 
       <section className="cards">
         {/* <!-- 1 --> */}
-        <section className="card card--heart">
+        <section className={`card card--${cardColor}`}>
           1
           <div className="card__inner card__inner--centered">
             <div className="card__column card__column--centered">
@@ -36,7 +39,7 @@ const Cards: React.FC = () => {
           </div>
         </section>
         {/* <!-- 2 --> */}
-        <section className="card card--heart">
+        <section className={`card card--${cardColor}`}>
           2
           <div className="card__inner card__inner--centered">
             <div className="card__column">
@@ -47,7 +50,7 @@ const Cards: React.FC = () => {
         </section>
 
         {/* <!-- 3 --> */}
-        <section className="card card--heart">
+        <section className={`card card--${cardColor}`}>
           3
           <div className="card__inner card__inner--centered">
             <div className="card__column">
@@ -59,7 +62,7 @@ const Cards: React.FC = () => {
         </section>
 
         {/* <!-- 4 --> */}
-        <section className="card card--heart">
+        <section className={`card card--${cardColor}`}>
           4
           <div className="card__inner">
             <div className="card__column">
@@ -74,7 +77,7 @@ const Cards: React.FC = () => {
         </section>
 
         {/* <!-- 5 --> */}
-        <section className="card card--heart">
+        <section className={`card card--${cardColor}`}>
           5
           <div className="card__inner">
             <div className="card__column">
@@ -92,7 +95,7 @@ const Cards: React.FC = () => {
         </section>
 
         {/* <!-- 6 --> */}
-        <section className="card card--heart">
+        <section className={`card card--${cardColor}`}>
           6
           <div className="card__inner">
             <div className="card__column">
@@ -109,7 +112,7 @@ const Cards: React.FC = () => {
         </section>
 
         {/* <!-- 7 --> */}
-        <section className="card card--heart">
+        <section className={`card card--${cardColor}`}>
           7
           <div className="card__inner">
             <div className="card__column">
@@ -129,7 +132,7 @@ const Cards: React.FC = () => {
         </section>
 
         {/* <!-- 8 --> */}
-        <section className="card card--heart">
+        <section className={`card card--${cardColor}`}>
           8
           <div className="card__inner">
             <div className="card__column">
@@ -150,7 +153,7 @@ const Cards: React.FC = () => {
         </section>
 
         {/* <!-- 9 --> */}
-        <section className="card card--heart">
+        <section className={`card card--${cardColor}`}>
           9
           <div className="card__inner">
             <div className="card__column">
@@ -172,7 +175,7 @@ const Cards: React.FC = () => {
         </section>
 
         {/* <!-- 10 --> */}
-        <section className="card card--heart">
+        <section className={`card card--${cardColor}`}>
           10
           <div className="card__inner">
             <div className="card__column">
@@ -194,11 +197,13 @@ const Cards: React.FC = () => {
           </div>
         </section>
         {/* <!-- J --> */}
-        <section className="card card--heart">J</section>
+        <section className={`card card--${cardColor}`}>
+          J<div className="card-head-valet"></div>
+        </section>
         {/* <!-- D --> */}
-        <section className="card card--heart">D</section>
+        <section className={`card card--${cardColor}`}>D<div className="card-head-dame"></div></section>
         {/* <!-- R --> */}
-        <section className="card card--heart">R</section>
+        <section className={`card card--${cardColor}`}>R<div className="card-head-roi"></div></section>
       </section>
       {/* <!-- Spades --> */}
       <section className="cards">
@@ -372,14 +377,13 @@ const Cards: React.FC = () => {
         </section>
         {/* <!-- J --> */}
         <section className="card card--spade">
-          J
-          <img src="./valet.png" alt="valet" className="card-head" />
+          J<div className="card-head-valet"></div>
         </section>
 
         {/* <!-- D --> */}
-        <section className="card card--spade">D</section>
+        <section className="card card--spade">D<div className="card-head-dame"></div></section>
         {/* <!-- R --> */}
-        <section className="card card--spade">R</section>
+        <section className="card card--spade">R<div className="card-head-roi"></div></section>
       </section>
       {/* <!-- Diamonds --> */}
       <section className="cards">
@@ -552,11 +556,13 @@ const Cards: React.FC = () => {
           </div>
         </section>
         {/* <!-- J --> */}
-        <section className="card card--diamonds">J</section>
+        <section className="card card--diamonds">
+          J<div className="card-head-valet"></div>
+        </section>
         {/* <!-- D --> */}
-        <section className="card card--diamonds">D</section>
+        <section className="card card--diamonds">D<div className="card-head-dame"></div></section>
         {/* <!-- R --> */}
-        <section className="card card--diamonds">R</section>
+        <section className="card card--diamonds">R<div className="card-head-roi"></div></section>
       </section>
       {/* <!-- Clubs --> */}
       <section className="cards">
@@ -729,11 +735,13 @@ const Cards: React.FC = () => {
           </div>
         </section>
         {/* <!-- J --> */}
-        <section className="card card--clubs">J</section>
+        <section className="card card--clubs">
+          J<div className="card-head-valet"></div>
+        </section>
         {/* <!-- D --> */}
-        <section className="card card--clubs">D</section>
+        <section className="card card--clubs">D<div className="card-head-dame"></div></section>
         {/* <!-- R --> */}
-        <section className="card card--clubs">R</section>
+        <section className="card card--clubs">R<div className="card-head-roi"></div></section>
       </section>
     </div>
   );
