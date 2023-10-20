@@ -1,9 +1,9 @@
-// import dotenv from 'dotenv';
-// dotenv.config();
 import "./CreateGame.css";
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import { initializeCardDeck } from "../function/cardsFunction";
+
 
 const LINK_BACKEND = "http://localhost:3001";
 
@@ -37,7 +37,7 @@ const CreateGame: React.FC = () => {
       if (response.status === 200){
         const gameID = response.data.gameID
         localStorage.setItem("gameID", gameID);
-
+        initializeCardDeck()
         navigate("/autobahn");
       }
 

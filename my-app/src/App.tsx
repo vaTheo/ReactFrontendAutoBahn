@@ -44,7 +44,6 @@ const Wrapper: React.FC = () => {
         />
         <Route path="/CreateGame" element={<CreateGame />} />
         <Route path="/autobahn" element={<Autobahn />} />
-        <Route path="/cards" element={<Cards />} />
 
         {/* Other routes go here */}
       </Routes>

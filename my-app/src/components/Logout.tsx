@@ -39,6 +39,7 @@ const Logout: React.FC = () => {
       localStorage.removeItem("userToken");
       localStorage.removeItem("userID");
       localStorage.removeItem("userName");
+      localStorage.removeItem("cardDeck");
       navigate("/"); // Navigate to the login page after logoutn
     }
   };

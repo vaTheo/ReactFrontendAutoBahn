@@ -1,750 +1,328 @@
 // import dotenv from 'dotenv';
 // dotenv.config();
 import "./card.scss";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import React from "react";
 
-const LINK_BACKEND = "http://localhost:3001";
+const Cards: React.FC<{ cardNumber: number; cardColorName: string }> = ({ cardNumber, cardColorName }) => {
 
-const Cards: React.FC = () => {
-  // Error modal (popin)
+  switch (cardNumber) {
+    //CASE CARD NUMBER 1
+    case 1:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- 1 --> */}
+            <section className={`card card--${cardColorName}`}>
+              1
+              <div className="card__inner card__inner--centered">
+                <div className="card__column card__column--centered">
+                  <div className="card__symbol"></div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
 
-  const selectCard = async () => {
-    try {
-    } catch (error: any) {
-      if (error) {
-      } else {
-        console.error("Error during login:", error);
-      }
-    }
-  };
-  const cardColor ='heart'
-  const cardNumber = 1 //From 1 to 14 (14 =Joker)
+    //CASE CARD NUMBER 2
+    case 2:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- 2 --> */}
+            <section className={`card card--${cardColorName}`}>
+              2
+              <div className="card__inner card__inner--centered">
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
+    //CASE CARD NUMBER 3
+    case 3:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- 3 --> */}
+            <section className={`card card--${cardColorName}`}>
+              3
+              <div className="card__inner card__inner--centered">
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
+    //CASE CARD NUMBER 4
+    case 4:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- 4 --> */}
+            <section className={`card card--${cardColorName}`}>
+              4
+              <div className="card__inner">
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                </div>
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
 
+    //CASE CARD NUMBER 5
+    case 5:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- 5 --> */}
+            <section className={`card card--${cardColorName}`}>
+              5
+              <div className="card__inner">
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                </div>
+                <div className="card__column card__column--centered">
+                  <div className="card__symbol"></div>
+                </div>
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
 
+    //CASE CARD NUMBER 6
+    case 6:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- 6 --> */}
+            <section className={`card card--${cardColorName}`}>
+              6
+              <div className="card__inner">
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                </div>
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
 
-  return (
-    <div>
-      {/* <!-- Hearts --> */}
+    //CASE CARD NUMBER 7
+    case 7:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- 7 --> */}
+            <section className={`card card--${cardColorName}`}>
+              7
+              <div className="card__inner">
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                </div>
+                <div className="card__column card__column--centered">
+                  <div className="card__symbol card__symbol--huge"></div>
+                </div>
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
 
-      <section className="cards">
-        {/* <!-- 1 --> */}
-        <section className={`card card--${cardColor}`}>
-          1
-          <div className="card__inner card__inner--centered">
-            <div className="card__column card__column--centered">
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-        {/* <!-- 2 --> */}
-        <section className={`card card--${cardColor}`}>
-          2
-          <div className="card__inner card__inner--centered">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
+    //CASE CARD NUMBER 8
+    case 8:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- 8 --> */}
+            <section className={`card card--${cardColorName}`}>
+              8
+              <div className="card__inner">
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                </div>
+                <div className="card__column card__column--centered">
+                  <div className="card__symbol card__symbol--big"></div>
+                  <div className="card__symbol card__symbol--big"></div>
+                </div>
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
 
-        {/* <!-- 3 --> */}
-        <section className={`card card--${cardColor}`}>
-          3
-          <div className="card__inner card__inner--centered">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
+    //CASE CARD NUMBER 9
+    case 9:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- 9 --> */}
+            <section className={`card card--${cardColorName}`}>
+              9
+              <div className="card__inner">
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol card__symbol--rotated"></div>
+                  <div className="card__symbol"></div>
+                </div>
+                <div className="card__column card__column--centered">
+                  <div className="card__symbol card__symbol"></div>
+                </div>
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol card__symbol--rotated"></div>
+                  <div className="card__symbol"></div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
 
-        {/* <!-- 4 --> */}
-        <section className={`card card--${cardColor}`}>
-          4
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
+    //CASE CARD NUMBER 10
+    case 10:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- 10 --> */}
+            <section className={`card card--${cardColorName}`}>
+              10
+              <div className="card__inner">
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol card__symbol--rotated"></div>
+                  <div className="card__symbol"></div>
+                </div>
+                <div className="card__column card__column--centered">
+                  <div className="card__symbol card__symbol--big"></div>
+                  <div className="card__symbol card__symbol--big"></div>
+                </div>
+                <div className="card__column">
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol"></div>
+                  <div className="card__symbol card__symbol--rotated"></div>
+                  <div className="card__symbol"></div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
 
-        {/* <!-- 5 --> */}
-        <section className={`card card--${cardColor}`}>
-          5
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
+    //CASE CARD NUMBER 11
+    case 11:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- J --> */}
+            <section className={`card card--${cardColorName}`}>
+              J<div className="card-head-valet"></div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
 
-        {/* <!-- 6 --> */}
-        <section className={`card card--${cardColor}`}>
-          6
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
+    //CASE CARD NUMBER 12
+    case 12:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- D --> */}
+            <section className={`card card--${cardColorName}`}>
+              D<div className="card-head-dame"></div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
 
-        {/* <!-- 7 --> */}
-        <section className={`card card--${cardColor}`}>
-          7
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol--huge"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
+    //CASE CARD NUMBER 13
+    case 13:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- R --> */}
+            <section className={`card card--${cardColorName}`}>
+              R<div className="card-head-roi"></div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
 
-        {/* <!-- 8 --> */}
-        <section className={`card card--${cardColor}`}>
-          8
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol--big"></div>
-              <div className="card__symbol card__symbol--big"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
+    //CASE CARD NUMBER 14
+    case 14:
+      return (
+        <div>
+          <section className="cards">
+            {/* <!-- R --> */}
+            <section className={`card card--${cardColorName}`}>
+              JOKER<div className="card-head-roi"></div>
+            </section>
+          </section>
+        </div>
+      );
+      break;
 
-        {/* <!-- 9 --> */}
-        <section className={`card card--${cardColor}`}>
-          9
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
+    default:
+      return <div>Invalid card number</div>;
 
-        {/* <!-- 10 --> */}
-        <section className={`card card--${cardColor}`}>
-          10
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol--big"></div>
-              <div className="card__symbol card__symbol--big"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-        {/* <!-- J --> */}
-        <section className={`card card--${cardColor}`}>
-          J<div className="card-head-valet"></div>
-        </section>
-        {/* <!-- D --> */}
-        <section className={`card card--${cardColor}`}>D<div className="card-head-dame"></div></section>
-        {/* <!-- R --> */}
-        <section className={`card card--${cardColor}`}>R<div className="card-head-roi"></div></section>
-      </section>
-      {/* <!-- Spades --> */}
-      <section className="cards">
-        {/* <!-- 1 --> */}
-        <section className="card card--spade">
-          1
-          <div className="card__inner card__inner--centered">
-            <div className="card__column card__column--centered">
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 2 --> */}
-        <section className="card card--spade">
-          2
-          <div className="card__inner card__inner--centered">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 3 --> */}
-        <section className="card card--spade">
-          3
-          <div className="card__inner card__inner--centered">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 4 --> */}
-        <section className="card card--spade">
-          4
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 5 --> */}
-        <section className="card card--spade">
-          5
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 6 --> */}
-        <section className="card card--spade">
-          6
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 7 --> */}
-        <section className="card card--spade">
-          7
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol--huge"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 8 --> */}
-        <section className="card card--spade">
-          8
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol--big"></div>
-              <div className="card__symbol card__symbol--big"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 9 --> */}
-        <section className="card card--spade">
-          9
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 10 --> */}
-        <section className="card card--spade">
-          10
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol--big"></div>
-              <div className="card__symbol card__symbol--big"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-        {/* <!-- J --> */}
-        <section className="card card--spade">
-          J<div className="card-head-valet"></div>
-        </section>
-
-        {/* <!-- D --> */}
-        <section className="card card--spade">D<div className="card-head-dame"></div></section>
-        {/* <!-- R --> */}
-        <section className="card card--spade">R<div className="card-head-roi"></div></section>
-      </section>
-      {/* <!-- Diamonds --> */}
-      <section className="cards">
-        {/* <!-- 1 --> */}
-        <section className="card card--diamonds">
-          1
-          <div className="card__inner card__inner--centered">
-            <div className="card__column card__column--centered">
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 2 --> */}
-        <section className="card card--diamonds">
-          2
-          <div className="card__inner card__inner--centered">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 3 --> */}
-        <section className="card card--diamonds">
-          3
-          <div className="card__inner card__inner--centered">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 4 --> */}
-        <section className="card card--diamonds">
-          4
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 5 --> */}
-        <section className="card card--diamonds">
-          5
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 6 --> */}
-        <section className="card card--diamonds">
-          6
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 7 --> */}
-        <section className="card card--diamonds">
-          7
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol--huge"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 8 --> */}
-        <section className="card card--diamonds">
-          8
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol--big"></div>
-              <div className="card__symbol card__symbol--big"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 9 --> */}
-        <section className="card card--diamonds">
-          9
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 10 --> */}
-        <section className="card card--diamonds">
-          10
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol--big"></div>
-              <div className="card__symbol card__symbol--big"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-        {/* <!-- J --> */}
-        <section className="card card--diamonds">
-          J<div className="card-head-valet"></div>
-        </section>
-        {/* <!-- D --> */}
-        <section className="card card--diamonds">D<div className="card-head-dame"></div></section>
-        {/* <!-- R --> */}
-        <section className="card card--diamonds">R<div className="card-head-roi"></div></section>
-      </section>
-      {/* <!-- Clubs --> */}
-      <section className="cards">
-        {/* <!-- 1 --> */}
-        <section className="card card--clubs">
-          1
-          <div className="card__inner card__inner--centered">
-            <div className="card__column card__column--centered">
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 2 --> */}
-        <section className="card card--clubs">
-          2
-          <div className="card__inner card__inner--centered">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 3 --> */}
-        <section className="card card--clubs">
-          3
-          <div className="card__inner card__inner--centered">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 4 --> */}
-        <section className="card card--clubs">
-          4
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 5 --> */}
-        <section className="card card--clubs">
-          5
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 6 --> */}
-        <section className="card card--clubs">
-          6
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 7 --> */}
-        <section className="card card--clubs">
-          7
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol--huge"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 8 --> */}
-        <section className="card card--clubs">
-          8
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol--big"></div>
-              <div className="card__symbol card__symbol--big"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 9 --> */}
-        <section className="card card--clubs">
-          9
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* <!-- 10 --> */}
-        <section className="card card--clubs">
-          10
-          <div className="card__inner">
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-            <div className="card__column card__column--centered">
-              <div className="card__symbol card__symbol--big"></div>
-              <div className="card__symbol card__symbol--big"></div>
-            </div>
-            <div className="card__column">
-              <div className="card__symbol"></div>
-              <div className="card__symbol"></div>
-              <div className="card__symbol card__symbol--rotated"></div>
-              <div className="card__symbol"></div>
-            </div>
-          </div>
-        </section>
-        {/* <!-- J --> */}
-        <section className="card card--clubs">
-          J<div className="card-head-valet"></div>
-        </section>
-        {/* <!-- D --> */}
-        <section className="card card--clubs">D<div className="card-head-dame"></div></section>
-        {/* <!-- R --> */}
-        <section className="card card--clubs">R<div className="card-head-roi"></div></section>
-      </section>
-    </div>
-  );
+  }
 };
 
 export default Cards;

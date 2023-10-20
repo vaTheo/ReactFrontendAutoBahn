@@ -1,0 +1,87 @@
+/* Styling for the main container */
+.autbahn-container {
+  display: flex; /* Align children elements in a row */
+  flex-direction: column; /* Stack children elements in a column */
+  align-items: center; /* Center children elements horizontally */
+  justify-content: center; /* Center children elements vertically */
+  min-height: 100vh; /* Minimum height of 100% of the viewport height */
+  background-color: #f4f4f4; /* Light gray background color */
+}
+
+/* Styling for the display card button */
+.DisplayCard {
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 1rem; /* Font size for the button text */
+  border: none; /* No border for the button */
+  border-radius: 5px; /* Rounded corners with 5px radius */
+  cursor: pointer; /* Cursor changes to pointer when hovered over the button */
+  background-color: #4caf50; /* Green background color */
+  color: #ffffff; /* White text color */
+}
+
+.DisplayCard:hover {
+  background-color: #45a049; /* Darker green background color when hovered over */
+}
+
+/* Styling for the modal */
+.modal {
+  position: fixed; /* Fixed position to cover the entire viewport */
+  left: 0; /* Positioned at the left edge of the viewport */
+  top: 0; /* Positioned at the top edge of the viewport */
+  width: 100%; /* Full width of the viewport */
+  height: 100%; /* Full height of the viewport */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background color */
+  display: flex; /* Align children elements in a row */
+  align-items: center; /* Center children elements vertically */
+  justify-content: center; /* Center children elements horizontally */
+}
+
+/* Styling for the modal content */
+.modal-content {
+  background-color: #ffffff; /* White background color */
+  padding: 20px; /* Padding inside the modal content */
+  border-radius: 5px; /* Rounded corners with 5px radius */
+  text-align: center; /* Center text horizontally */
+  position: relative; /* Relative positioning for child elements with absolute positioning */
+  max-width: 400px; /* Maximum width of 400px */
+  width: 100%; /* Full width of the modal content */
+}
+
+/* Styling for the close button in modal */
+.close-button {
+  background-color: #ff0000; /* Red background color */
+  color: #ffffff; /* White text color */
+  padding: 5px 10px; /* Padding inside the button */
+  border: none; /* No border for the button */
+  border-radius: 5px; /* Rounded corners with 5px radius */
+  cursor: pointer; /* Cursor changes to pointer when hovered over the button */
+  position: absolute; /* Absolute positioning relative to the modal content */
+  top: 5px; /* Positioned 5px from the top edge of the modal content */
+  right: 5px; /* Positioned 5px from the right edge of the modal content */
+}
+
+.close-button:hover {
+  color: red; /* Red text color when hovered over */
+}
+
+/* Styling for the container that holds yes/no choices in modal */
+.container-choose-yes-no {
+  display: flex; /* Align children elements in a row */
+  justify-content: space-between; /* Space between children elements */
+  margin-top: 20px; /* Margin at the top of the container */
+}
+
+/* Styling for the yes/no choices in modal */
+.choose-yes-no {
+  padding: 10px 20px; /* Padding inside the choice */
+  border: none; /* No border for the choice */
+  border-radius: 5px; /* Rounded corners with 5px radius */
+  cursor: pointer; /* Cursor changes to pointer when hovered over the choice */
+  background-color: #4caf50; /* Green background color */
+  color: #ffffff; /* White text color */
+  text-align: center; /* Center text horizontally */
+}
+
+.choose-yes-no:hover {
+  background-color: #45a049; /* Darker green background color when hovered over */
+}
