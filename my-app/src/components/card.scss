@@ -136,6 +136,19 @@ body {
  
 }
 
+.card-back{
+  background-image: url('./cardback.png'); /* Path to your image */
+  background-size: contain; // Ensure the image is contained within the element, maintaining its aspect ratio
+  background-repeat: no-repeat; // Do not repeat the image
+  background-position: center; // Center the image within the element
+  width: 100%; // Set the width of the element
+  height: 100%; // Set the height of the element
+  position: relative; // Use absolute positioning
+  top: 0%; // Position at the top of the parent element
+  left: 0%; // Position at the left of the parent element
+ 
+}
+
 // Define styles for card inner section
 .card__inner {
   box-sizing: border-box; // Use border-box model for sizing

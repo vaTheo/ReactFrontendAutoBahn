@@ -311,8 +311,8 @@ const Cards: React.FC<{ cardNumber: number; cardColorName: string }> = ({ cardNu
         <div>
           <section className="cards">
             {/* <!-- R --> */}
-            <section className={`card card--${cardColorName}`}>
-              JOKER<div className="card-head-roi"></div>
+            <section className={`card card--NULL`}>
+              <div className="card-back"></div>
             </section>
           </section>
         </div>

@@ -1,46 +1,49 @@
 import "./CreateGame.css";
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { initializeCardDeck } from "../function/cardsFunction";
-
 
 const LINK_BACKEND = "http://localhost:3001";
 
 const CreateGame: React.FC = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // Error modal (popin)
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
 
-  const [nbCard, setNbcard] = useState<number>(2);
+  const [nbCardAutoBahn, setNbcardAutoBahn] = useState<number>(2);
 
   const handlSetNbCardChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setNbcard(Number(e.target.value)); // Convert the string value to a number
+    setNbcardAutoBahn(Number(e.target.value)); // Convert the string value to a number
   };
   const startGame = async () => {
     try {
-        const userID = localStorage.getItem("userID");
-        const userToken = localStorage.getItem("userToken");
+      const userID = localStorage.getItem("userID");
+      const userToken = localStorage.getItem("userToken");
 
-       const response = await axios.post(LINK_BACKEND + "/game/startGame", {
-        IDPlaying: userID,
-        IDAdmin: '',
-        nuberCardAutobahn: nbCard,
-        userPoints:{}
-       },{
-        headers: {
-          authorization: `Bearer ${userToken}`,
+      const response = await axios.post(
+        LINK_BACKEND + "/game/startGame",
+        {
+          IDPlaying: userID,
+          IDAdmin: "",
+          nuberCardAutobahn: nbCardAutoBahn,
+          userPoints: {},
         },
-      })
-      if (response.status === 200){
-        const gameID = response.data.gameID
+        {
+          headers: {
+            authorization: `Bearer ${userToken}`,
+          },
+        }
+      );
+      if (response.status === 200) {
+        const gameID = response.data.gameID;
         localStorage.setItem("gameID", gameID);
-        initializeCardDeck()
+        localStorage.setItem("nbCardAutoBahn", nbCardAutoBahn.toString());
+        initializeCardDeck();
         navigate("/autobahn");
       }
-
     } catch (error: any) {
       if (axios.isAxiosError(error)) {
         console.error("Server responded with an error:", error.response?.data);
@@ -58,7 +61,7 @@ const CreateGame: React.FC = () => {
         <h1 className="NewGame-Header">Create a new game</h1>
         <label>
           Number of Cards:
-          <select value={nbCard} onChange={handlSetNbCardChange}>
+          <select value={nbCardAutoBahn} onChange={handlSetNbCardChange}>
             <option value={2}>2</option>
             <option value={3}>3</option>
             <option value={4}>4</option>
