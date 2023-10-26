@@ -1,0 +1,28 @@
+// Styling for the score card container
+.score-card {
+  display: flex;  // Using flexbox for layout
+  align-items: center;  // Vertically aligning items to the center
+  justify-content: space-between;  // Spacing between title and value
+  padding: 10px;  // Padding inside the card
+  margin: 10px 0;  // Margin outside the card
+  background-color: white;  // White background color
+  opacity: 80%;
+  border: 1px solid #e0e0e0;  // Light grey border
+  border-radius: 8px;  // Rounded corners
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  // Subtle shadow for depth
+}
+
+// Styling for the score title
+.score-title {
+  margin: 0;  // No margin
+  font-size: 1em;  // Font size
+  font-weight: bold;  // Bold font
+  color: #0b0b0b;  // Dark grey color
+}
+
+// Styling for the score value
+.score-value {
+  margin: 0;  // No margin
+  font-size: 1em;  // Font size
+  color: #0b0b0b;  // Medium grey color
+}

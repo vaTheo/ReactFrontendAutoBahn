@@ -1,0 +1,56 @@
+// Styling for the main container
+div {
+  font-family: Arial, sans-serif;  // Setting the font for the entire container
+
+  // Styling for the title of the scores page
+  h1 {
+    text-align: center;  // Centering the title
+    color: #4A4A4A;  // Dark grey color for the title
+    margin-bottom: 20px;  // Space below the title
+  }
+
+  // Styling for the box that contains the scores
+  .ScoreBoxes {
+    display: flex;  // Using flexbox to place the two divs side by side
+    justify-content: space-between;  // Spacing between the two divs
+
+    // Styling for the player score box
+    .PlayerScore {
+      flex: 1;  // Taking up equal space as the BestScore box
+      background-color: #F8F8F8;  // Light grey background
+      padding: 20px;  // Padding inside the box
+      border: 1px solid #E0E0E0;  // Light grey border
+      border-radius: 8px;  // Rounded corners
+
+      // Styling for the select dropdown
+      select {
+        padding: 8px;  // Padding inside the dropdown
+        margin-right: 10px;  // Space to the right of the dropdown
+      }
+
+      // Styling for the button to display the score
+      .NewGame-button {
+        background-color: #4CAF50;  // Green background color
+        color: white;  // White text color
+        border: none;  // No border
+        padding: 10px 20px;  // Padding inside the button
+        border-radius: 5px;  // Rounded corners
+        cursor: pointer;  // Pointer cursor on hover
+
+        // Change background color on hover
+        &:hover {
+          background-color: #45A045;
+        }
+      }
+    }
+
+    // Styling for the best score box
+    .BestScore {
+      flex: 1;  // Taking up equal space as the BestScore box
+      background-color: #F8F8F8;  // Light grey background
+      padding: 20px;  // Padding inside the box
+      border: 1px solid #E0E0E0;  // Light grey border
+      border-radius: 8px;  // Rounded corners
+    }
+  }
+}

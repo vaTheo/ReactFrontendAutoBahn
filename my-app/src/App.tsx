@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import CreateGame from "./pages/CreateGame";
 import Autobahn from "./pages/autobahn";
 import Cards from "./components/card";
+import Score from "./pages/Score";
 
 import { userAuth } from "./Hook/userAuth";
 import {
@@ -44,6 +45,7 @@ const Wrapper: React.FC = () => {
         />
         <Route path="/CreateGame" element={<CreateGame />} />
         <Route path="/autobahn" element={<Autobahn />} />
+        <Route path="/score" element={<Score />} />
 
         {/* Other routes go here */}
       </Routes>
