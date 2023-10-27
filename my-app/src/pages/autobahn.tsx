@@ -42,7 +42,7 @@ const Autobahn: React.FC = () => {
   let playerGuessGood = false;
   //Execute code when page is unload
   window.addEventListener("beforeunload", (event) => {
-    console.log('try')
+    console.log("try");
     looseGame(
       nbCardFail,
       nbCardWin,
@@ -53,7 +53,7 @@ const Autobahn: React.FC = () => {
     console.log("API call before page reload");
   });
   window.addEventListener("unload", (event) => {
-    console.log('try')
+    console.log("try");
     looseGame(
       nbCardFail,
       nbCardWin,
@@ -63,7 +63,7 @@ const Autobahn: React.FC = () => {
     );
 
     console.log("API call after page reload");
-});
+  });
 
   const incrementCounter = () => {
     intnbWinInARow = intnbWinInARow + 1;
@@ -161,35 +161,8 @@ const Autobahn: React.FC = () => {
   return (
     <div>
       <div className="autbahn-container">
-        <div className="cards-container">
-          {/* Render the Cards component and pass cardNumber and cardColorName as props */}
-          <Cards cardNumber={card1Number} cardColorName={card1ColorName} />
-          <Cards cardNumber={card2Number} cardColorName={card2ColorName} />
-          <Cards cardNumber={card3Number} cardColorName={card3ColorName} />
-          <Cards cardNumber={card4Number} cardColorName={card4ColorName} />
-          <Cards cardNumber={card5Number} cardColorName={card5ColorName} />
-        </div>
         <button
-          className="DisplayCard"
-          onClick={() => {
-            selectCard("red");
-            setnbRedSelected((prev) => prev + 1);
-          }}
-        >
-          C'est rouge !
-        </button>
-
-        <button
-          className="DisplayCard"
-          onClick={() => {
-            selectCard("black");
-            setnbBlackSelected((prev) => prev + 1);
-          }}
-        >
-          C'est noir !
-        </button>
-        <button
-          className="DisplayCard"
+          className="DisplayCard-Button"
           onClick={() => {
             looseGame(
               nbCardFail,
@@ -203,6 +176,44 @@ const Autobahn: React.FC = () => {
         >
           J'abandone c'est trop dur...
         </button>
+        <div className="cards-container">
+          {/* Render the Cards component and pass cardNumber and cardColorName as props */}
+          <div className="cards">
+            <Cards cardNumber={card1Number} cardColorName={card1ColorName} />
+          </div>
+          <div className="cards">
+            <Cards cardNumber={card2Number} cardColorName={card2ColorName} />
+          </div>
+          <div className="cards">
+            <Cards cardNumber={card3Number} cardColorName={card3ColorName} />
+          </div>
+          <div className="cards">
+            <Cards cardNumber={card4Number} cardColorName={card4ColorName} />
+          </div>
+          <div className="cards">
+            <Cards cardNumber={card5Number} cardColorName={card5ColorName} />
+          </div>
+        </div>
+        <div className="FlexBoxRedBlack">
+          <button
+            className="DisplayCard-Red"
+            onClick={() => {
+              selectCard("red");
+              setnbRedSelected((prev) => prev + 1);
+            }}
+          >
+            C'est rouge !
+          </button>
+          <button
+            className="DisplayCard-Black"
+            onClick={() => {
+              selectCard("black");
+              setnbBlackSelected((prev) => prev + 1);
+            }}
+          >
+            C'est noir !
+          </button>
+        </div>
       </div>
 
       {isModalOpenDeckEmpty && (

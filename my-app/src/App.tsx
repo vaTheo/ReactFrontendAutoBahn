@@ -43,9 +43,18 @@ const Wrapper: React.FC = () => {
           path="/logout"
           element={isAuthenticated ? <Logout /> : <Navigate to="/" />}
         />
-        <Route path="/CreateGame" element={<CreateGame />} />
-        <Route path="/autobahn" element={<Autobahn />} />
-        <Route path="/score" element={<Score />} />
+        <Route
+          path="/createGame"
+          element={isAuthenticated ? <CreateGame /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/autobahn"
+          element={isAuthenticated ? <Autobahn /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/score"
+          element={isAuthenticated ? <Score /> : <Navigate to="/" />}
+        />
 
         {/* Other routes go here */}
       </Routes>

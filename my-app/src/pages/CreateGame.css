@@ -10,7 +10,7 @@
 
 /* NewGame-form: Styling for the form inside the main container */
 .NewGame-form {
-    width: 300px;                 /* Set a fixed width for the form */
+    width: auto;                 /* Set a fixed width for the form */
     padding: 20px;                /* Add padding inside the form for spacing */
     border: 1px solid #ddd;       /* Add a light gray border around the form */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
@@ -23,12 +23,16 @@
     margin-bottom: 20px;          /* Add space below the header */
     text-align: center;           /* Center the header text */
 }
-
+.NewGame-text {
+    font-size: 16px;              /* Set a larger font size for the header */
+    margin-bottom: 5px;          /* Add space below the header */
+    text-align: left;           /* Center the header text */
+}
 /* Dropdown styling for selecting the number of cards */
 .NewGame-form select {
     width: 100%;                  /* Make the dropdown span the full width of its container */
-    padding: 8px;                 /* Add some padding for visual comfort */
-    margin: 10px 0;               /* Add margin above and below for spacing */
+    padding: 5px;                 /* Add some padding for visual comfort */
+    margin: 5px 0;               /* Add margin above and below for spacing */
     border: 1px solid #ddd;       /* A light gray border around the dropdown */
     border-radius: 4px;           /* Rounded corners for the dropdown */
 }

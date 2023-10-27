@@ -58,9 +58,11 @@ const CreateGame: React.FC = () => {
   return (
     <div className="NewGame-container">
       <div className="NewGame-form">
-        <h1 className="NewGame-Header">Create a new game</h1>
+      <h1 className="NewGame-Header">Création d'une nouvelle partie</h1>
+      <h2 className="NewGame-text">Choisie le nombre de carte de l'autoroute :</h2>
+        
         <label>
-          Number of Cards:
+          
           <select value={nbCardAutoBahn} onChange={handlSetNbCardChange}>
             <option value={2}>2</option>
             <option value={3}>3</option>
@@ -73,7 +75,7 @@ const CreateGame: React.FC = () => {
         </label>
 
         <button className="NewGame-button" onClick={startGame}>
-          Start game
+          C'est parti !
         </button>
       </div>
       {isModalOpen && (

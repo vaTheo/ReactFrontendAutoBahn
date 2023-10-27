@@ -1,29 +1,70 @@
 /* Styling for the main container */
+/* Styling for the main container */
 .autbahn-container {
-  display: flex; /* Align children elements in a row */
-  flex-direction: column; /* Stack children elements in a column */
-  align-items: center; /* Center children elements horizontally */
-  justify-content: center; /* Center children elements vertically */
-  min-height: 100vh; /* Minimum height of 100% of the viewport height */
-  background-color: #f4f4f4; /* Light gray background color */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: top; 
+  min-height: 100vh; 
+  background-color: #f4f4f4;
 }
+
+/* Updated styling for cards container to make it responsive */
 .cards-container {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: nowrap; /* Prevents cards from wrapping to the next line */
 }
 
+/* Styling for each card (add this class to your Cards component) */
+.cards {
+  flex: 1; /* Makes each card grow to fill the available space */
+  max-width: 150px; /* Maximum width of each card */
+  min-width: 100px; /* Minimum width of each card */
+}
+.FlexBoxRedBlack {
+  display: flexbox;
+  justify-content: space-between
+
+}
 
 /* Styling for the display card button */
-.DisplayCard {
+.DisplayCard-Red {
   padding: 10px 20px; /* Padding inside the button */
   font-size: 1rem; /* Font size for the button text */
   border: none; /* No border for the button */
   border-radius: 5px; /* Rounded corners with 5px radius */
   cursor: pointer; /* Cursor changes to pointer when hovered over the button */
-  background-color: #4caf50; /* Green background color */
+  background-color: #a42727; /* Green background color */
   color: #ffffff; /* White text color */
+  margin : 5px;  
+
+}
+
+.DisplayCard-Black {
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 1rem; /* Font size for the button text */
+  border: none; /* No border for the button */
+  border-radius: 5px; /* Rounded corners with 5px radius */
+  cursor: pointer; /* Cursor changes to pointer when hovered over the button */
+  background-color: #130000f1; /* Green background color */
+  color: #ffffff; /* White text color */
+  margin : 5px;
+}
+
+.DisplayCard-Button {
+  display: flexbox;
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 1rem; /* Font size for the button text */
+  border: none; /* No border for the button */
+  border-radius: 5px; /* Rounded corners with 5px radius */
+  cursor: pointer; /* Cursor changes to pointer when hovered over the button */
+  background-color: #224586; /* Green background color */
+  color: #ffffff; /* White text color */
+  margin: 20px;
+
 }
 
 .DisplayCard:hover {
@@ -87,6 +128,7 @@
   background-color: #4caf50; /* Green background color */
   color: #ffffff; /* White text color */
   text-align: center; /* Center text horizontally */
+  margin: 5px;
 }
 
 .choose-yes-no:hover {
