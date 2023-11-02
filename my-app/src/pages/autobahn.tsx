@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./autobahn.scss";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
@@ -7,7 +7,6 @@ import {
   isChoiceOK,
 } from "../function/cardsFunction";
 import Cards from "../components/card"; // Import the Cards component
-import axios from "axios";
 import { looseGame, winGame } from "../function/gameWinLoose";
 
 const Autobahn: React.FC = () => {
